@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/goodplace-theme.scss",
+              "src/assets/styles/goodplace-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
