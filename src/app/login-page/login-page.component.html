@@ -1,0 +1,26 @@
+<div class="content">
+  <div id="header">
+    <img src="/assets/img/logo.png" alt="goodplace logo" id="header-image"/>
+  </div>
+  <h2>Bienvenue sur <span class="goodBlue">Goodplace</span> !</h2>
+  <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()" class="">
+    <!-- E-mail field-->
+    <mat-form-field>
+      <input matInput placeholder="E-mail" formControlName="email"/>
+      <mat-error>{{getErrorMessageEmail()}}</mat-error>
+    </mat-form-field>
+
+    <!-- Password field-->
+    <mat-form-field>
+      <input matInput placeholder="Mot de passe" [type]="hide ? 'password' : 'text'" formControlName="password">
+      <button mat-icon-button matSuffix (click)="togglePassword()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error>{{getErrorMessagePassword()}}</mat-error>
+    </mat-form-field>
+
+    <!-- Submit Button -->
+    <button mat-flat-button color="primary" type="submit" [disabled]="loginForm.invalid" >Se connecter</button>
+  </form>
+  <p>Vous n'avez pas de compte ? <a href="#" class="md-accent">Créer un compte</a></p>
+</div>
