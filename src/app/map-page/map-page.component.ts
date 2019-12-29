@@ -14,7 +14,10 @@ export class MapPageComponent implements OnInit {
 
   ngOnInit() {
     this.isAuthenticated = this.authService.isAuthenticated();
-    console.log(this.isAuthenticated);
   }
 
+  doLogout() {
+    this.authService.logout();
+    this.isAuthenticated = false;
+  }
 }

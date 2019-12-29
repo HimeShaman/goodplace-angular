@@ -8,8 +8,10 @@ import {AuthService} from './services/auth.service';
 })
 export class AppComponent {
   title = 'goodplace-angular';
+  public loggedUser = this.authService.isAuthenticated();
 
   constructor(private authService: AuthService) {
 
   }
+
 }
