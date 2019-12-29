@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {User, UserOpt} from '../models/auth/user';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class AuthService {
 
   login(email: string, password: string): Observable<boolean> {
     return new Observable(subscriber => {
-      this.http.post<UserOpt>('https://goodplace.benedicte-quimbert.fr/api/login', {email, password}).subscribe(result => {
+      this.http.post<UserOpt>(`${environment.api.base_url}/api/login`, {email, password}).subscribe(result => {
         this.loggedUser = new User(result);
         localStorage.setItem('loggedUser', JSON.stringify(this.loggedUser));
         subscriber.next(true);
