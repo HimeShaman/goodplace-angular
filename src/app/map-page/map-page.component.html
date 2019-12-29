@@ -1,3 +1,4 @@
+<app-map [userMarker]="userMarker"></app-map>
 <button *ngIf="!isAuthenticated" mat-flat-button color="accent" routerLink="login">Login</button>
 <span *ngIf="isAuthenticated">Je suis co</span>
 <button mat-flat-button color="accent" *ngIf="isAuthenticated" (click)="doLogout()">Logout</button>

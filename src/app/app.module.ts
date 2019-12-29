@@ -9,12 +9,14 @@ import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatS
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { MapPageComponent } from './map-page/map-page.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    MapPageComponent
+    MapPageComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
