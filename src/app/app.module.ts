@@ -5,8 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginPageComponent } from './login-page/login-page.component';
-import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSnackBarModule} from '@angular/material';
-import {ReactiveFormsModule} from '@angular/forms';
+import {
+  MatButtonModule,
+  MatCheckboxModule, MatDividerModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatSidenavModule,
+  MatSnackBarModule, MatToolbarModule
+} from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { MapPageComponent } from './map-page/map-page.component';
 import { MapComponent } from './map/map.component';
@@ -28,7 +36,12 @@ import { MapComponent } from './map/map.component';
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatToolbarModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
