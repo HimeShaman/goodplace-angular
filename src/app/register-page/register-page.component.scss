@@ -1,0 +1,34 @@
+#header-image{
+  height: 90%;
+}
+
+#header{
+  background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url("src/assets/img/road.png");
+  background-repeat: round;
+  background-size: contain;
+  padding-top: 30px;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 5%;
+  height: 100%;
+  /*padding: 50px 10px;*/
+  background-color: #FFF;
+}
+
+mat-form-field{
+  margin: 15px;
+}

@@ -5,8 +5,10 @@
     </mat-toolbar>
     <mat-divider></mat-divider>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <button mat-flat-button color="accent"  (click)="sideNavOpened = !sideNavOpened">Open/Close sidenav</button>
+  <mat-sidenav-content id = "content">
+
     <router-outlet></router-outlet>
+    <button mat-flat-button color="accent"  (click)="sideNavOpened = !sideNavOpened" id="menuButton">Open/Close sidenav</button>
+
   </mat-sidenav-content>
 </mat-sidenav-container>

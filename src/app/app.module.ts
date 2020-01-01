@@ -18,13 +18,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { MapPageComponent } from './map-page/map-page.component';
 import { MapComponent } from './map/map.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     MapPageComponent,
-    MapComponent
+    MapComponent,
+    RegisterPageComponent
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api: {
-    base_url: 'https://goodplace.benedicte-quimbert.fr'
+    base_url: 'https://goodplace.benedicte-quimbert.fr/api'
   }
 };
 
