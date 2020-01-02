@@ -2,13 +2,39 @@
   <mat-sidenav mode="over" [(opened)]="sideNavOpened">
     <mat-toolbar color="primary">
       <span>Goodplace</span>
+        <mat-icon svgIcon="close" id="close-sidenav" (click)="closeSidenav()"></mat-icon>
     </mat-toolbar>
     <mat-divider></mat-divider>
+
+    <!--    TODO : factoriser en ngFor ?
+            TODO : réactivité (css) du menu aux clics
+            TODO : faire en sorte de refresh le composant au login user !important
+      -->
+
+    <ul class="sidenav">
+      <li>
+        <a routerLink="" (click)="closeSidenav()">
+          <mat-icon class="nav-icon"  svgIcon="map" aria-hidden="false" aria-label="Voir la carte"></mat-icon>Voir la carte</a>
+      </li>
+      <li>
+        <a href="#" class="disabled" >
+          <mat-icon class="nav-icon"  svgIcon="add" aria-hidden="false" aria-label="Ajouter une initiative"></mat-icon>Créer une initiative</a>
+      </li>
+      <li>
+        <a href="#" class="disabled" >
+          <mat-icon class="nav-icon"  svgIcon="profile" aria-hidden="false" aria-label="Voir le profil"></mat-icon>Voir le profil</a>
+      </li>
+      <li>
+        <a href="#" class="disabled" >
+          <mat-icon class="nav-icon"  svgIcon="mail" aria-hidden="false" aria-label="Contacter GoodPlace"></mat-icon>Contact</a>
+      </li>
+    </ul>
+    <button *ngIf="!loggedUser" mat-flat-button color="primary" (click)="closeSidenav()" routerLink="login" class="log-button">Se connecter</button>
+    <button *ngIf="loggedUser" mat-flat-button color="warn" (click)="doLogout()" class="log-button">Se déconnecter</button>
   </mat-sidenav>
   <mat-sidenav-content id = "content">
 
     <router-outlet></router-outlet>
     <button mat-flat-button color="accent"  (click)="sideNavOpened = !sideNavOpened" id="menuButton">Open/Close sidenav</button>
-
   </mat-sidenav-content>
 </mat-sidenav-container>

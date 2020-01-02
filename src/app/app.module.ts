@@ -43,7 +43,8 @@ import { RegisterPageComponent } from './register-page/register-page.component';
     MatCheckboxModule,
     FormsModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
