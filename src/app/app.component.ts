@@ -2,6 +2,7 @@ import { Component, OnChanges } from '@angular/core';
 import {AuthService} from './services/auth.service';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ export class AppComponent {
 
   constructor(private authService: AuthService,
               private iconRegistry: MatIconRegistry,
-              private sanitizer: DomSanitizer) {
+              private sanitizer: DomSanitizer,
+              private router: Router) {
     iconRegistry.addSvgIcon(
       'add',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/add_circle_outline-24px.svg'));
@@ -48,16 +50,13 @@ export class AppComponent {
     iconRegistry.addSvgIcon(
       'search',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/search-24px.svg'));
+    iconRegistry.addSvgIcon(
+      'menu',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/menu-24px.svg'));
 
   }
 
   closeSidenav() {
     this.sideNavOpened = false;
   }
-
-  doLogout() {
-    this.authService.logout();
-    this.loggedUser = false;
-  }
-
 }

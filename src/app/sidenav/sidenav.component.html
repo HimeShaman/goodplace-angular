@@ -1,0 +1,31 @@
+
+<mat-toolbar color="primary">
+  <span>Goodplace</span>
+  <mat-icon svgIcon="close" id="close-sidenav" (click)="doCloseSidenav()"></mat-icon>
+</mat-toolbar>
+<mat-divider></mat-divider>
+
+<!--    TODO : factoriser en ngFor ?
+        TODO : réactivité (css) du menu aux clics
+        TODO : faire en sorte de refresh le composant au login user !important
+  -->
+<ul class="sidenav">
+  <li>
+    <a routerLink="" (click)="doCloseSidenav()">
+      <mat-icon class="nav-icon"  svgIcon="map" aria-hidden="false" aria-label="Voir la carte"></mat-icon>Voir la carte</a>
+  </li>
+  <li>
+    <a href="#" class="disabled" >
+      <mat-icon class="nav-icon"  svgIcon="add" aria-hidden="false" aria-label="Ajouter une initiative"></mat-icon>Créer une initiative</a>
+  </li>
+  <li>
+    <a href="#" class="disabled" >
+      <mat-icon class="nav-icon"  svgIcon="profile" aria-hidden="false" aria-label="Voir le profil"></mat-icon>Voir le profil</a>
+  </li>
+  <li>
+    <a href="#" class="disabled" >
+      <mat-icon class="nav-icon"  svgIcon="mail" aria-hidden="false" aria-label="Contacter GoodPlace"></mat-icon>Contact</a>
+  </li>
+</ul>
+<button *ngIf="!loggedUser" mat-flat-button color="primary" (click)="doCloseSidenav()" routerLink="login" class="log-button">Se connecter</button>
+<button *ngIf="loggedUser" mat-flat-button color="warn" (click)="doLogout()" class="log-button">Se déconnecter</button>

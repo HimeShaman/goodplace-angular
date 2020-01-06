@@ -19,6 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { MapPageComponent } from './map-page/map-page.component';
 import { MapComponent } from './map/map.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RegisterPageComponent } from './register-page/register-page.component';
     LoginPageComponent,
     MapPageComponent,
     MapComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,

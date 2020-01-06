@@ -1,0 +1,38 @@
+.sidenav{
+  list-style-type: none;
+  padding-inline-start: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav a{
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: #000;
+  margin: 10px 15px 0 0;
+}
+
+.sidenav .disabled{
+  color: #888888;
+  font-weight: 300;
+  pointer-events: none;
+  cursor: default;
+}
+
+.nav-icon{
+  margin-right: 10px;
+}
+
+#close-sidenav{
+  right: 8px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.log-button{
+  position: absolute;
+  bottom: 25px;
+  width: 90%;
+  margin: 10px;
+}
