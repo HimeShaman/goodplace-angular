@@ -25,8 +25,8 @@ export class MapPageComponent implements OnInit {
   ngOnInit() {
     this.isAuthenticated = this.authService.isAuthenticated();
     this.geolocationService.retrieveLonLat().subscribe(value => {
-      // this.userMarker = new MapMarker(value, userIcon);
-      this.userMarker = new MapMarker(new Coordinate(2.4180969, 48.851806), userIcon);
+      this.userMarker = new MapMarker(value, userIcon);
+      // this.userMarker = new MapMarker(new Coordinate(2.4180969, 48.851806), userIcon);
       this.activityService.findActivities(this.userMarker.coordinate.lon, this.userMarker.coordinate.lat).subscribe(activities => {
         this.activities = activities;
         this.markers = this.activities.map(activity => new MapMarker(activity.position, eventIcon));
