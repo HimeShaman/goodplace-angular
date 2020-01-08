@@ -1,6 +1,6 @@
 import { Component, OnChanges } from '@angular/core';
 import {AuthService} from './services/auth.service';
-import {MatIconRegistry} from '@angular/material';
+import {MatDialog, MatDialogRef, MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Router} from '@angular/router';
 
@@ -19,7 +19,8 @@ export class AppComponent {
   constructor(private authService: AuthService,
               private iconRegistry: MatIconRegistry,
               private sanitizer: DomSanitizer,
-              private router: Router) {
+              private router: Router,
+              private dialog: MatDialog) {
     iconRegistry.addSvgIcon(
       'add',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/add_circle_outline-24px.svg'));
@@ -62,4 +63,22 @@ export class AppComponent {
   closeSidenav() {
     this.sideNavOpened = false;
   }
+
+  openDialog() {
+    this.dialog.open(DialogComponent);
+  }
+}
+@Component({
+  selector: 'app-dialog',
+  templateUrl: './dialog.component.html',
+})
+export class DialogComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogComponent>) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
 }

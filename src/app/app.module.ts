@@ -2,12 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppComponent, DialogComponent} from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginPageComponent } from './login-page/login-page.component';
 import {
   MatButtonModule,
-  MatCheckboxModule, MatDividerModule,
+  MatCheckboxModule, MatDialogModule, MatDividerModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
@@ -21,6 +21,7 @@ import { MapComponent } from './map/map.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,9 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MapPageComponent,
     MapComponent,
     RegisterPageComponent,
-    SidenavComponent
+    SidenavComponent,
+    DialogComponent
+
   ],
   imports: [
     BrowserModule,
@@ -46,8 +49,13 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     FormsModule,
     MatToolbarModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
+  entryComponents: [
+    DialogComponent
+  ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

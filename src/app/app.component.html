@@ -9,8 +9,9 @@
       <mat-icon class="nav-icon"  svgIcon="menu" aria-hidden="false" aria-label="Contacter GoodPlace"></mat-icon></button>
     <button *ngIf="this.router.url === '/login'" mat-mini-fab color="primary"  routerLink="" id="backButton">
       <mat-icon class="nav-icon"  svgIcon="back" aria-hidden="false" aria-label="Contacter GoodPlace"></mat-icon></button>
-    <button mat-mini-fab color="accent" aria-label="Bouton : consulter une information" id="toggle-info-button">
+    <button mat-mini-fab color="accent" aria-label="Bouton : consulter une information" id="toggle-info-button" (click)="openDialog()">
       <mat-icon>info</mat-icon>
     </button>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
